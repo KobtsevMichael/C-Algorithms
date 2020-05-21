@@ -2,8 +2,8 @@
 #include <stdbool.h>
 #include <string.h>
  
-#define PATTERN_SIZE (20)
-#define BUF_SIZE (20)
+#define PATTERN_SIZE (18)
+#define BUF_SIZE (18)
 
 int power(int num, int degree) {
 
@@ -95,7 +95,7 @@ int read_substring(unsigned char *pattern) {
  
     int len_p;
  
-    for (len_p = 0; len_p < PATTERN_SIZE - 1; ++len_p) {
+    for (len_p = 0; len_p < PATTERN_SIZE-1; ++len_p) {
  
         if (fscanf(stdin, "%c", &pattern[len_p]) == EOF) {
             return 0;
@@ -104,7 +104,7 @@ int read_substring(unsigned char *pattern) {
             break;
         }
     }
-    pattern[len_p] = '\0';
+    pattern[len_p] = 0;
  
     return len_p;
 }

@@ -195,7 +195,7 @@ void decompress(FILE* f_in, FILE* f_out) {
     if (!(res = fread(buf, sizeof(u_char), BUF_LEN, f_in))) {
         exit(0);
     }
-    else if (res < BUF_LEN) {
+    else if (feof(f_in)) {
         buf_code[0] = 0;
         last_byte = readLastBuf(buf, buf_code, res);
         code_len = strlen(buf_code) - last_byte;
